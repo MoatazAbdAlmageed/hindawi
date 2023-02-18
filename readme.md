@@ -1,5 +1,15 @@
 # hindawi
 
+downlaod hindawi books for kindle
+
+## Usage
+
+- cd business && wget -i books
+
+## this snippet to generate books file
+
+TODO: create chrome extention to generate fil of node script
+
 ```js
 var existingEntries = [
   ...(JSON.parse(localStorage.getItem("books")) || JSON.stringify([])),
@@ -18,6 +28,6 @@ existingEntries.push(page);
 localStorage.setItem("books", JSON.stringify(existingEntries));
 ```
 
-https://www.youtube.com/watch?v=H3WGvtH69NE&ab_channel=abdulmajeedAlaskar
+## convert epub to kfx
 
-# hindawi
+https://www.youtube.com/watch?v=H3WGvtH69NE&ab_channel=abdulmajeedAlaskar
