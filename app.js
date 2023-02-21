@@ -58,13 +58,13 @@ async function scrapeData() {
       });
       // Logs books array to the console
       console.dir(books);
-      const dir = path.resolve(path.join(__dirname, topic));
+      const dir = path.resolve(path.join(__dirname, `categories/${topic}`));
 
       if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir);
       }
 
-      var file = fs.createWriteStream(`${topic}/books.txt`);
+      var file = fs.createWriteStream(`categories/${topic}/books.txt`);
       file.on("error", function (err) {
         /* error handling */
       });

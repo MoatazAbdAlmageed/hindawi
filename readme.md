@@ -6,7 +6,7 @@ downlaod hindawi books for kindle
 
 ### Downlaod business books
 
-- cd business && wget -i books.txt
+- cd categories/business && wget -i books.txt
 
 ### Downlaod history books
 
