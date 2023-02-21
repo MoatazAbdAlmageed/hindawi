@@ -14,7 +14,7 @@ downlaod hindawi books for kindle
 
 ## Generate files
 
-- `node app.js -category history `
+- `node app.js -c history`
 
 ## convert epub to .epub
 
