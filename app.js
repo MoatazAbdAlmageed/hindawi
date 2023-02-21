@@ -3,10 +3,13 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
 const fs = require("fs");
-
+const path = require("path");
+var argv = require("minimist")(process.argv.slice(2));
+if (!argv.c) {
+  throw new Error("please pass c parameter like node app.js -c history");
+}
 const books = [];
-const topic = "history";
-
+const topic = argv.c;
 // Async function which scrapes the data
 async function scrapeData() {
   try {
@@ -55,8 +58,13 @@ async function scrapeData() {
       });
       // Logs books array to the console
       console.dir(books);
+      const dir = path.resolve(path.join(__dirname, topic));
 
-      var file = fs.createWriteStream(`${topic}.txt`);
+      if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir);
+      }
+
+      var file = fs.createWriteStream(`${topic}/books.txt`);
       file.on("error", function (err) {
         /* error handling */
       });

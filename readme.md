@@ -2,31 +2,19 @@
 
 downlaod hindawi books for kindle
 
-## Usage
+## Download Books
 
-- cd business && wget -i books
+### Downlaod business books
 
-## this snippet to generate books file
+- cd business && wget -i books.txt
 
-TODO: create chrome extention to generate fil of node script
+### Downlaod history books
 
-```js
-var existingEntries = [
-  ...(JSON.parse(localStorage.getItem("books")) || JSON.stringify([])),
-];
-if (existingEntries == null) existingEntries = [];
+- cd history && wget -i books.txt
 
-var page = [...document.querySelectorAll(".bookCover a")]
-  .map((a) =>
-    `${a.href.replace("www", "downloads")}.epub`.replace("/.epub", ".epub")
-  )
-  .join(" ");
+## Generate files
 
-localStorage.setItem("page", page);
-// Save books back to local storage
-existingEntries.push(page);
-localStorage.setItem("books", JSON.stringify(existingEntries));
-```
+- `node app.js -category history `
 
 ## convert epub to .epub
 
